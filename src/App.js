@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
-import WalletBalance from "./components/WalletBalance";
 import AddExpenseForm from "./components/AddExpenseForm";
 import ExpenseSummary from "./components/ExpenseSummary";
 import ExpenseTrends from "./components/ExpenseTrends";
 import ExpenseItems from "./components/ExpenseItems";
 import AddIncomeForm from "./components/AddIncomeForm";
+import { useSnackbar } from "notistack";
 import { FaPlus } from "react-icons/fa";
 import "./App.css";
 
@@ -27,6 +27,8 @@ const App = () => {
   const [isAddIncomeModalOpen, setIsAddIncomeModalOpen] = useState(false);
   const [editingExpense, setEditingExpense] = useState(null);
 
+  const { enqueueSnackbar } = useSnackbar();
+
   useEffect(() => {
     saveToLocalStorage("walletBalance", walletBalance);
     saveToLocalStorage("expenses", expenses);
@@ -39,7 +41,7 @@ const App = () => {
 
   const addExpense = (expense) => {
     if (walletBalance < expense.amount) {
-      alert("Insufficient balance!");
+      enqueueSnackbar("Insufficient balance!");
       return;
     }
     setExpenses([...expenses, expense]);
