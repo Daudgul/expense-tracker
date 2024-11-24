@@ -1,38 +1,389 @@
-.App {
+:root {
+  --primary-color: #3498db; /* Blue */
+  --secondary-color: #2ecc71; /* Green */
+  --accent-color: #e74c3c; /* Red */
+  --background-color: #ecf0f1; /* Light gray */
+  --text-color: #2c3e50; /* Dark gray */
+  --radius: 15px;
+  --shadow: 0px 4px 4px 0px #00000040;
+}
+
+*,
+body {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  background-color: #3b3b3b;
+}
+
+/* expanse tracker css */
+
+.container {
+  max-width: 1236px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.container h1 {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36.77px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin: 10px 0;
+}
+
+.expense_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: #626262;
+  margin: 2% 0;
+  padding: 10px;
+  /* height: 269px; */
+  flex-wrap: wrap;
+}
+
+.expense_box h2 {
+  text-align: center;
+}
+.card {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.expense_btn_card h2 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 34.47px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #fff;
+}
+.bal_span {
+  font-weight: 700;
+  color: #9dff5b;
+}
+.exp_span {
+  font-weight: 700;
+  color: #f4bb4a;
+}
+.expense_btn_card {
+  min-width: 355.41px;
+  height: 181px;
+  background: #9b9b9b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.add {
+  width: 167.65px;
+  height: 38px;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18.38px;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  border: none;
+  cursor: pointer;
+}
+.add:hover {
+  opacity: 0.7;
+}
+
+.green {
+  background: linear-gradient(90deg, #b5dc52 0%, #89e148 100%);
+}
+.red {
+  background: linear-gradient(90deg, #ff9595 0%, #ff4747 80%, #ff3838 100%);
+}
+
+/* TRANSACTION BOX CSS */
+
+.transaction_box {
+  display: flex;
+}
+
+.recent_transaction {
+  flex: 1;
+}
+
+.top_transaction {
+  width: 417px;
+  margin: 0 26px;
+  /* background-color: #fff; */
+  overflow: hidden;
+}
+.top_transaction_box,
+.recent_transaction_box {
+  height: 345.03px;
+  background-color: #fff;
+  overflow: hidden;
+}
+.sub-heading {
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 32.17px;
+  text-align: left;
+  color: #fff;
+  margin: 8px 0;
+}
+
+/* RECENT TRANSACTION */
+
+.btn {
+  width: 37px;
+  height: 37px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  border-radius: 15px;
+  border: none;
+  margin: 5px;
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 23px 10px 0px 28px;
+  padding: 10px 0px;
+  border-bottom: 1px solid #9b9b9b;
+}
+.right_item,
+.left_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+  margin-left: 14px;
+}
+.content p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21.79px;
+  text-transform: capitalize;
+}
+.left_item p {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 21.79px;
+  color: #f4bb4a;
+  margin-right: 14px;
+}
+
+.icon {
+  width: 38px;
+  height: 38px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 700;
+  border: none;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  gap: 10px;
+}
+.pagination button {
+  width: 37px;
+  height: 37px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  border-radius: 15px;
+  border: none;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.count {
+  width: 37px;
+  height: 37px;
+
+  border-radius: 5px;
+  background: #43967b;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  color: #fff;
+
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 27.58px;
+  padding: 4px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* MODAL StYLE */
+.modal_box {
+  position: absolute;
+  top: 31%;
+  left: 31%;
+  margin: 0 auto;
+  background: #efefefd9;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px 10px 15px 20px;
+
+  width: 100%;
+  max-width: 538px;
+}
+.modal_box h2 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 34.47px;
+  padding: 15px 0;
+}
+.message {
+  padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cnl {
+  width: 112px;
+  height: 51px;
+  background: linear-gradient(0deg, #d9d9d9, #d9d9d9);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: none;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.add_bal {
+  background: linear-gradient(0deg, #f4bb4a, #f4bb4a);
+  height: 51px;
+  padding: 0 20px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  /* width: 223px; */
+}
+.add_exp {
+  background: linear-gradient(0deg, #f4bb4a, #f4bb4a);
+  height: 51px;
+  padding: 0 20px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  /* width: 223px; */
+}
+
+.add-income-form {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
+}
+.add-expence-form {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  padding: 10px;
+
+  align-items: center;
+  gap: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+  flex: 1;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  border: none;
+  height: 51px;
+  padding: 0 20px;
+  outline: none;
+  min-width: 223px;
+}
+select {
+  flex: 1;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  border: none;
+  height: 51px;
+  padding: 0 20px;
+  outline: none;
+  min-width: 223px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Removes the spinner from number input */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* For Webkit browsers like Chrome/Safari */
+  margin: 0; /* Remove any extra spacing */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* For Firefox */
+}
+
+/* .expense-summary {
+  width: 250px;
+  height: auto;
+} */
+@media only screen and (max-width: 438px) {
+  .expense-item {
+    gap: 20px;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media only screen and (max-width: 738px) {
+  .expense_box {
+    flex-direction: column;
+  }
+  .expense_btn_card {
+    min-width: 200px;
+    width: 100%;
+  }
+  .transaction_box {
+    flex-direction: column;
+  }
+  .top_transaction {
+    width: 100%;
+    margin: 0;
+    padding: 20px 0;
+  }
+  .modal_box {
+    left: 0;
+    right: 0;
+  }
+  .expense_btn_card h2 {
+    font-size: 20px;
   }
 }
